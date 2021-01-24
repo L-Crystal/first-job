@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .active{
+          color: red;
+      }
+  </style>
+</head>
+
+<body>
+  <!-- 1、引入 vue -->
+  <div id="app">
+    <input v-model="msg" type="text" @keyup="search">
+    <button @click="add">添加</button>
+    <ul>
+        <li v-for="(item,index) in showlist"  :class="{active:item.isActive}" >
+            <span @click="change(item)"> {{item.content}} </span>
+            <button @click=del(index)>删除</button>
+        </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      // 2、确定要挂载的元素
+      el: '#app',
+      // 3、声明要绑定的数据
+      data: {
+        msg: '',
+        list:[
+            {
+                content:'买花',
+                isActive: false
+            },
+            {
+                content:'买🐟',
+                isActive: false
+            },
+            {
+                content:'买菜',
+                isActive: false
+            }
+
+        ],
+        showlist:[
+            {
+                content:'买花',
+                isActive: false
+            },
+            {
+                content:'买🐟',
+                isActive: false
+            },
+            {
+                content:'买菜',
+                isActive: false
+            }
+
+        ]
+      },
+      methods: {
+          add() {
+              this.list.push({
+                  content:this.msg,
+                  isActive: false
+                });
+              this.showlist = [...this.list];
+              this.msg = '';
+          },
+          change(obj) {
+              obj.isActive = !obj.isActive;
+          },
+          del(index) {
+              this.list.splice(index,1);
+              this.showlist = [...this.list];
+              
+          },
+          search() {
+            this.showlist = this.list.filter((value, index, arr) => {
+              return value.content.includes(this.msg)
+            })
+          }
+      }
+    })
+  </script>
+</body>
+
+</html>

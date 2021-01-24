@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function time()
+        { 
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+            var hour = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            var w = d.getDay();
+            var week;
+            switch(w)
+            {
+                case 0:
+                    week = "日";
+                    break;
+                case 1:
+                    week = "一";
+                    break;
+                case 2:
+                    week = "二";
+                    break;
+                case 3:
+                    week = "三";
+                    break;
+                case 4:
+                    week = "四";
+                    break;
+                case 5:
+                    week = "五";
+                    break;
+                case 6:
+                    week = "六";
+                    break;
+
+            }
+
+            document.write("现在是"+ year +"年" + month + "月" + day +"日" +hour +"点"+ min + "分" + sec+ "秒（星期"+ week +"),欢迎您的到访！");
+        }
+        time();
+    </script>
+</body>
+</html>

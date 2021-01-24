@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            padding: 0 10px;
+        }
+        .dia-box{
+            width:px;
+            background: #709dbb;
+            border-radius:5px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        .dia-box header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .dia-box header,
+        .dia-box footer{
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .dia-box main{
+            border-bottom:solid 1px rgb(233, 222, 222); 
+            border-top:solid 1px rgb(199, 192, 192);
+            
+        }
+        .dia-box main label{
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="showLogin">登录</button>
+        <button @click="showregist">注册</button>
+     <my-dialog v-show="isLoginshow" title="登录" @closedia="hide"> 
+         <p>
+            <label for="login-username">用户名:</label>
+            <input id="login-username" type="text">
+         </p>
+         <p>
+            <label for="login-password">密码:</label>
+            <input id="login-password" type="text">
+         </p>
+         
+         
+     </my-dialog>
+     <my-dialog v-show="isRegister" title="注册" @closedia="hide"> 
+        <p>
+           <label for="regist-username">用户名:</label>
+           <input id="regist-username" type="text">
+        </p>
+        <p>
+           <label for="regist-password">密码:</label>
+           <input id="regist-password" type="text">
+        </p>
+        <p>
+            <label for="regist-ppassword">确认密码:</label>
+            <input id="regist-ppassword" type="text">
+         </p>
+        
+        
+    </my-dialog>
+    </div>
+
+    <template id="tpl">
+        <div class="dia-box">
+            <header class="wrapper">
+                {{title}}
+                <span @click="close">X</span>
+            </header>
+            <main class="wrapper">
+                <slot></slot>
+            </main>
+            <footer class="wrapper">
+                <button>标题</button>
+            </footer>
+        </div>
+    </template>
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data: {
+                isLoginshow:false,
+                isRegister:false,
+            },
+            methods:{
+                showLogin(){
+                    this.isLoginshow = true;
+                    this.isRegister = false;
+                },
+                showregist(){
+                    this.isRegister = true;
+                    this.isLoginshow = false;
+                },
+                hide(){
+                    this.isRegister = false;
+                    this.isLoginshow = false;
+                }
+            },
+            components: {
+                'myDialog':{
+                    template:'#tpl',
+                    props:['title'],
+                    methods:{
+                        close(){
+                            this.$emit('closedia');
+                        }
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

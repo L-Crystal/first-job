@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{count}}
+     <my-com :title="title" @add666="add1"></my-com>
+    </div>
+
+
+    <template id="my-com">
+        <div>
+            <p>标题：{{title}}</p>
+            <button @click="add">+1</button>
+        </div>
+    </template>
+
+    
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                title:'hello world',
+                count:0
+            },
+            methods:{
+                add1(){
+                    this.count++;
+                }
+            },
+            components:{
+                'myCom':{
+                    template:'#my-com',
+                    data(){
+                        return {
+                            
+                        }
+                    },
+                    methods:{
+                        add(){
+                            this.$emit('add666');
+
+                        }
+                    },
+                    props:['title']
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

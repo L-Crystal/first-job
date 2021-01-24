@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header{
+    background: #333333;
+
+}
+header a{
+    color: #ffffff;
+    font-size: 12px;
+}
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+}
+header .link-list{
+    display: flex;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+nav .nav-list{
+    display: flex;
+    width: 480px;
+    justify-content: space-between;
+}
+nav img{
+    width: 187px;
+    height: 55px;
+}
+nav a{
+    font-size: 18px;
+    color: #212121;
+}
+nav .active{
+    color: #e94400;
+}
+nav a:hover{
+    color: #e94400;
+}
+nav .sub-list{
+    position: absolute;
+    border: 1px;  
+}
+nav .sub-list a{
+    font-size: 16px;
+    color: #434343;
+}
+nav ul li.money{
+    position: relative;
+}
+nav ul li .toggle{
+    padding-bottom: 100px;
+}
+nav ul li.money a:hover + .sub-list{
+    display: block;
+    background: #ffffff;
+}
+nav ul .sub-list {
+    display: none;
+    text-align: center;
+    width: 150px;
+    padding: 10px 0;
+    position: absolute;
+    left: -55px;
+    top:40px;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+}
+  nav ul .sub-list li {
+    height: 40px;
+  }
+  nav ul .sub-list li:hover{
+      background: #eeeeee;
+  }
+  nav ul .sub-list a {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+  }
+  nav ul .sub-nav a:hover {
+    background: #e5e5e5;
+  }
+  nav ul .sub-list::before{
+    position: absolute;
+    left: 65px;
+    top: -7px;
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    border-right: none;
+    background: #ffffff;
+    transform: rotate(45deg);
+}
+
+
+
+
+.back{
+    background: url("./images/banner.jpg") center 0;
+    height: 640px;
+    text-align: center;
+}
+.back h1{
+    padding-top: 193px;
+    font-size: 54px;
+    color: #ffffff;
+    font-weight: 300;
+}
+.back button{
+    margin: 36px;
+    width: 260px;
+    height: 60px;
+    color: #ffffff;
+    font-size: 24px;
+    border: none;
+    background: #f93f2b;
+    border-radius: 5px;
+}
+.back button:hover{
+    background: #e83a27;
+}
+
+
+
+main.wrapper{
+    overflow: hidden;
+    background: #ffffff;
+    margin-top: -80px;
+    border: 1px solid #e6e6e6;
+    
+}
+main .al{
+    margin: 30px;
+    margin-right: 0;
+    float: left;
+}
+main .info .yellow .picture{
+    background: url(./images/bg1.png);
+    width: 300px;
+    height: 85px;
+    background-size: cover;
+    padding: 44px 30px;
+}
+main .info .picture h2{
+    font-size: 33px;
+    font-weight: 400;
+    color: #ffffff;
+}
+main .info .picture p{
+    font-size: 33px;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 15px;
+}
+main .info .blue .picture{
+    background: url(./images/bg2.png);
+    width: 300px;
+    height: 85px;
+    background-size: cover;
+    padding: 44px 30px;
+}
+main .info .list a{
+    color: #666666;
+    font-size: 16px;
+}
+main .info .list span{
+    color: #666666;
+    font-size: 16px;
+}
+main .info .list .active{
+    color: #fd3911;
+}
+main .info .list .activeb{
+    color: #4481c8;
+}
+main .info .more .active{
+    color: #fd3911;
+}
+main .info .al .list li{
+    margin: 25px;
+}
+main .info .more{
+    color: #FD3911;
+    border-top: 1px solid #ECECEC;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 30px;
+    padding-top: 20px;
+}
+
+
+footer{
+    display: flex;
+    height: 209px;
+    justify-content: space-between;
+}
+footer .intro{
+    margin-top: 109px;
+}
+footer .tel{
+    margin-top: 90px;
+}
+footer .intro{
+    display: flex;
+    height: 51px;
+    width: 476.1px;
+    justify-content: space-between;
+}
+footer .intro img{
+    width: 46px;
+    height: 46px;
+    margin-right: 8px;
+}
+footer .intro .info a{
+    color: #575757;
+    font-size: 14px;
+}
+footer .intro .info li span{
+    color: #6D6D6D;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+footer .tel h5{
+    font-size: 14px;
+    font-weight: normal;
+}
+footer .tel h5{
+    font-size: 14px;
+    font-weight: normal;
+    color: #575757;
+}
+footer .tel .tell{
+    color: #E84519;
+    font-size: 26px;
+}
+footer .tel .time{
+    font-size: 12px;
+    color: #575757;
+}

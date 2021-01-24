@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #outer{
+            width: 300px;
+            margin: 60px auto;
+            background: #b48f6d;
+        }
+        #tag{
+              border-bottom: 1px solid rgb(192, 189, 170);
+              height: 40px;
+        }
+        #outer li{
+            float: left;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+        }
+        #outer #text{
+            height: 300px;
+        }
+        #tag li.active{
+            background: navajowhite;
+        }
+        #text>div{
+             display: none;
+        }
+        #text>div.active{
+             display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <ul id="tag">
+            <li class="active">菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+        </ul>
+        <div id="text">
+            <div class="active">11111</div>
+            <div>22222</div>
+            <div>33333</div>
+
+        </div>
+    </div>
+    <script>
+        var oTag = document.getElementById("tag");
+        var aLi = oTag.getElementsByTagName("li");
+        var oText = document.getElementById('text');
+        var aDiv = oText.getElementsByTagName('div');
+        for(var i=0;i<aLi.length;i++)
+        {
+            aLi[i].index = i;
+            aLi[i].onclick = function () 
+            {
+                for (var j = 0; j < aLi.length; j++) 
+                {
+                   aLi[j].className = '';
+                   aDiv[j].className = '';
+               }
+                this.className = 'active';
+                aDiv[this.index].className = 'active';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input=prompt();
+        function fibo1(n)
+        {
+           if(n<=2) return 1;
+           else{
+               return fibo1(n-1)+fibo1(n-2);
+           }
+        }
+        function fibo2(n)
+        {
+            if(n<=2) return 1;
+            var a=1,b=1,temp;
+            for(var i=3;i<=n;i++)
+            {
+               temp=a+b;
+               a=b;
+               b=temp;
+            }
+            return b;
+        }
+        document.write("递归函数：fibo1(" + input +")=" + fibo1(input)+"<br/>");
+        document.write("非递归函数：fibo2(" + input +")=" + fibo2(input));
+    </script>
+</body>
+</html>

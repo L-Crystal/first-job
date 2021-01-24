@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        function justy(x)
+        {
+            if(x%3==0 && x%5==0 && x%7==0)
+            {
+                return 1;
+            }
+            else return 0;
+        }
+        
+        for(var i=1;i<=1000;i++)
+        {
+            if(justy(i)==0){continue;}
+            if(justy(i)==1)
+            {
+                document.write(i+" ");
+                sum++;
+            }
+            if(sum%6==0)
+            {document.write("<br/>");}
+        }
+    </script>
+</body>
+</html>

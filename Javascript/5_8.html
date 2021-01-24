@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pai(n)
+        {
+            var paii=0;
+            for(var i=1;i<=n;i++)
+            {
+                var tag; 
+                if(i%2==0)
+                {
+                   tag = -1;
+                }
+                else tag = 1;
+                paii+=4*(tag*(1/(2*i-1)));
+            }
+            return paii;
+        }
+        document.write("n=100,Π=" + pai(100) + "<br/>");
+        document.write("n=500,Π=" + pai(500) + "<br/>");
+        document.write("n=1000,Π=" + pai(1000) + "<br/>");
+        document.write("n=10000,Π=" + pai(10000));
+    </script>
+</body>
+</html>

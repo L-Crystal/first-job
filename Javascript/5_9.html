@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sum_Times = 0;
+        var win_Times = 0;
+        var win_Rate = 0;
+        var win = false;
+        function game()
+        {
+           sum_Times++;
+           for(var i=1;i<=3;i++)
+           {
+               var number=Math.floor(Math.random() * 9)+1;
+               if(number==8) win =true;
+           }
+           if(win) win_Times++;
+           win_Rate = (win_Times/sum_Times)*100;
+        }
+        while(true)
+        {
+        game();
+        if(!confirm(win?"赢":"输" + "\n" +"胜率：" + win_Rate + "%")) break;
+        }
+    </script>
+</body>
+</html>

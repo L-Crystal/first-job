@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [{name:'zyy',age: 22},
+                   {name:'wyh',age: 23},
+                   {name:'cx',age: 22},
+                   {name:'lxh',age: 25}
+                  ];
+        for(let value of arr.values()){
+            console.log(value);
+        }
+        for(let key of arr.keys()){
+            console.log(key);
+        }
+        for(let [index,value] of arr.entries()){
+            console.log(index,value);
+        }
+        arr.forEach(function (value,index,arr){
+            value.age += 1;
+        })
+        console.log(arr);
+    </script>
+</body>
+</html>

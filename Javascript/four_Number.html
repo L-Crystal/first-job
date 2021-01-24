@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x,A,B,C,xx;
+        for(x=1000;x<=9999;x++)
+        {
+            if(x%13 != 0){continue;}
+            xx = x;
+            A = Math.floor(xx/1000);
+            xx = xx%1000;
+            B = Math.floor(xx/100);
+            xx = xx%100;
+            C=Math.floor(xx/10);
+            if(A==B+C)
+            {
+                document.write("x=" + x + "<br/>");
+            }
+        }
+    </script>
+</body>
+</html>

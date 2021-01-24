@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var score = new Array(7);
+        var sum = 0;
+        for(var i=0;i<score.length;i++)
+        {
+            score[i]=parseFloat(prompt("输入第"+(i+1)+"门课的成绩","0"));
+            sum += score[i];
+            if(score[i]<60)
+            {
+                document.write("不及格成绩：" + score[i] + ",");
+            }
+        }
+        document.write("总成绩：" + sum + "<br/>");
+        document.write("平均分：" + Math.round(sum/score.length) + "<br/>");
+
+    </script>
+</body>
+</html>

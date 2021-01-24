@@ -1,0 +1,216 @@
+.wrapper{
+  padding: 0 0.2rem;
+}
+header{
+    width: 100%;
+    height: 1.48rem;
+    background: #f2f2f2;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+}
+header .search{
+    display: flex;
+    height: .88rem;
+    align-items: center;
+    justify-content: space-between;
+}
+header .search a.user{
+  justify-content: flex-end;
+}
+header .search a.logo img{
+    width: .5rem;
+    height: .32rem;
+}
+header .search a.user img{
+  width: 0.4rem;
+  height: 0.4rem;
+}
+header .search input{
+    width: 5.4rem;
+    margin: 0 .5rem;
+    flex: 1;
+    height: .66rem;
+    border: 1px solid #e5e5e5;
+    background: #ffffff url(../imgs/search.png) no-repeat .1rem center;
+    background-size: .5rem;
+    text-indent: .7rem;
+    color: rgba(0, 0, 0, 0.3);
+    border-radius: .04rem;
+  }
+  header .search input::placeholder{
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+
+
+
+  header nav .nav-list{
+    display: flex;
+    justify-content: space-around;
+
+  }
+  header nav .nav-list a{
+    font-size: .28rem;
+    color: #747474;
+    display: block;
+    height: .56rem;
+    line-height: .56rem;
+    display: flex;
+    align-items: center;
+
+  }
+  header nav .nav-list a.active{
+    color: #ed5b00;
+    border-bottom: .04rem solid #ed5b00;
+  }
+  header nav .nav-list img{
+    width: .4rem;
+    height: .4rem;
+  }
+
+
+  main{
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 1.48rem;
+  }
+  main .craousel{
+     height: 3.74rem;
+     border-bottom: 1px solid #cccccc;
+  }
+  main .craousel img{
+    height: 100%;
+    width: 100%;
+  }
+  main .nav-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .nav-list li{
+    width: 20%;
+  }
+  main .nav-list li img{
+    width: 100%;
+  }
+
+  main .news{
+    width: 100%;
+    border-top: .16rem solid #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+  }
+  main .news .box{
+    width: 49.7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main .news img{
+    width: 100%;
+  }
+
+  main .products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .12rem;
+    background-color: #ffffff;
+  }
+  main .products .product{
+    width: 49.2%;
+  }
+  main .products .product img{
+    width: 100%;
+  }
+  main .products .product .info{
+    padding: .2rem .28rem;
+    height: 1.72rem;
+    width: 3.1rem;
+    text-align: center;
+    font-size: .28rem;
+    line-height: 0.36rem;
+  }
+  main .products .product .info h3{
+    color: rgba(0, 0, 0, 0.87);
+    font-size: .292rem;
+  }
+  main .products .product .info p.desc{
+    font-size: .24rem;
+    color: rgba(0, 0, 0, 0.54);
+    margin-top: .06rem;
+    line-height: .3rem;
+  }
+  main .products .product .info p.price .new{
+    font-size: .28rem;
+    color: #ea625b;
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+  main .products .product .info p.price .old{
+    font-size: .22rem;
+    color:  rgba(0, 0, 0, 0.54);
+    text-decoration: line-through;
+  }
+  main .products .product .info button{
+    font-size: .25rem;
+    color:  #ffffff;
+    background: #ea625b;
+    width: 2.08rem;
+    padding: .166rem 0;
+    border-radius: 0.05rem;
+    font-weight: 700;
+    
+  }
+  main .more{
+    color: #00000099;
+    font-size: .292rem;
+    text-align: center;
+    height: 1.04rem;
+    line-height: 1.04rem;
+    background-color: #ffffff;
+  }
+  main .products .product .air{
+    text-align:left;
+  }
+  main .products .product .mi{
+    padding: .666rem .124rem 0 .334rem;
+  }
+  main .products .product .mi .price{
+    margin-top: .208rem;
+    
+  }
+  main .last{
+    margin-bottom: 1.2rem;
+  }
+
+
+  footer .nav-list .box{
+    height: 1.04rem;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    background:#ffffff;
+
+  }
+  footer .nav-list li{
+    display: flex;
+    /* justify-content: center; */
+  }
+  footer  img{
+    width: .416rem;
+    height: .416rem;
+    margin: 0 auto;
+
+  }
+  footer  span{
+    font-size: .24rem;
+    text-align: center;
+    color: #999999;
+  }
+  footer .box .active span{
+    color: #ff6700;
+  }

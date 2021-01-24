@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input1 = prompt("输入第一个字符串");
+        var input2 = prompt("输入第二个字符串");
+
+        var sum = "";
+        function Merge(s1,s2)
+        {
+            
+            if(s1.length == s2.length)
+            {
+                for(var i=0;i<s1.length;i++)
+                {
+                    sum += s1.charAt(i);
+                    sum += s2.charAt(i);
+                }
+            }
+            else if(s1.length > s2.length)
+            {
+                  for(var i=0; i<s2.length;i++)
+                  {
+                    sum += s1.charAt(i);
+                    sum += s2.charAt(i);
+                  }
+                  sum += s1.substr(s2.length,s1.length-s2.length);
+            }
+            else
+            {
+                for(var i=0; i<s1.length;i++)
+                  {
+                    sum += s1.charAt(i);
+                    sum += s2.charAt(i);
+                  }
+                  sum += s2.substr(s1.length,s2.length-s1.length);
+            }
+            document.write(sum);
+        }
+        Merge(input1,input2);
+    </script>
+</body>
+</html>

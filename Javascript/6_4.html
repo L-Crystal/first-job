@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("请输入一段字符串");
+        var sum = "";
+        var tag = "";
+        function CollectDigits(s)
+        {
+            for(var i=0;i<s.length;i++)
+            {
+                tag = s.charAt(i);
+                switch(tag)
+                {
+                    case "0":
+                        sum+=tag;
+                        break;
+                    case "1":
+                        sum+=tag;
+                        break;
+                    case "2":
+                        sum+=tag;
+                        break;
+                    case 3:
+                        sum+=tag;
+                        break;
+                    case "4":
+                        sum+=tag;
+                        break;
+                    case "5":
+                        sum+=tag;
+                        break;
+                    case "6":
+                        sum+=tag;
+                        break;
+                    case "7":
+                        sum+=tag;
+                        break;
+                    case "8":
+                        sum+=tag;
+                        break;
+                    case "9":
+                        sum+=tag;
+                        break;
+                }
+            }
+            
+            document.write(sum);
+        }
+             
+
+        CollectDigits(input);
+    </script>
+</body>
+</html>

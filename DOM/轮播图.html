@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #outer{
+            margin: 30px auto;
+            width: 750px;
+            position: relative;
+        }
+        #imgBox>img{
+            display: none;
+        }
+        #imgBox>img.active{
+            display: block;
+        }
+        #tag{
+            display: flex;
+            width: 150px;
+            justify-content: space-around;
+            position: absolute;
+            right:50px;
+            bottom: 30px;
+        }
+        #tag>li{
+            width: 25px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: #ffffff;
+            line-height: 25px;
+        }
+        #tag>li.active{
+            background: rgba(255, 0, 0, 0.7);
+        }
+        .btn{
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 100px;
+            position: absolute;
+            font-size: 70px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 100px;
+            top: 50%;
+            margin-top: -50px;
+        }
+        #left{
+            left: 0;
+        }
+        #right{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="imgBox">
+            <img src="imgs/1.jpg" alt="" class="active">
+            <img src="imgs/2.jpg" alt="">
+            <img src="imgs/3.jpg" alt="">
+            <img src="imgs/4.jpg" alt="">
+            <img src="imgs/5.jpg" alt="">
+        </div>
+        <ul id="tag">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div id="left" class="btn"> &lt; </div>
+        <div id="right" class="btn"> &gt; </div>
+    </div>
+    <script>
+        var oContainer = document.getElementById('outer');
+        var aLi = document.querySelectorAll("#tag>li");
+        var aImg = document.querySelectorAll("#imgBox>img");
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var curIndex = 0;
+
+        function change()
+        {
+            for (var j = 0; j < aLi.length; j++) {
+               aLi[j].className = '';
+               aImg[j].className = '';
+            }
+            aLi[curIndex].className = 'active';
+            aImg[curIndex].className = 'active';
+        }
+
+        for(var i=0;i<aLi.length;i++)
+        {
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                curIndex = this.index;
+                change();
+            }
+        }
+
+        oLeft.onclick = function(){
+            curIndex -= 1;
+            if(curIndex<0) curIndex = 4;
+            change();
+        }
+        oRight.onclick = function(){
+            curIndex += 1;
+            if(curIndex>4) curIndex = 0;
+            change();
+        }
+
+        var timer;
+        function go(params) {
+        // 自动翻页
+            timer = setInterval(function (params) {
+                oRight.onclick()
+            }, 1000);
+        }
+        go()
+
+        oContainer.onmouseout = function () {
+            go()
+        }
+        oContainer.onmouseover = function () {
+            // 停止翻页
+            clearInterval(timer)
+        }
+    </script>
+</body>
+</html>
